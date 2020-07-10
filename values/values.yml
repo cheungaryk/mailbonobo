@@ -1,0 +1,24 @@
+# answer every question!
+metadata:
+  sender: sender@company.com
+  bccRecipients: 
+    - a@company.com
+    - b@company.com
+  slackChannel: "#channelName"
+
+title: this is a title
+summary: summary is slightly longer and more descriptive than the title
+
+ticket:
+  rfc: RFC-123
+  jiraTicket: ABC-12345
+
+service:
+  serviceName: application_a
+  serviceDescription: this describes what application_a does
+  
+content:
+  when: 6-6:30 PM PT, Thursday, June 25th, 2020 
+  whoIsBeingImpacted: during the maintenance window, application_a will be unreacheable as it needs to be rebooted
+  why: we just feel like rebooting application_a
+  outage: yes

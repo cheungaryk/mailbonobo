@@ -1,0 +1,22 @@
+stages:
+  - test
+
+variables:
+  GOLANG_IMAGE: golang
+  GOLANG_IMAGE_VER: "1.14"
+
+.template: &test
+  image: ${GOLANG_IMAGE}:${GOLANG_IMAGE_VER}
+  stage: test
+  script:
+    - CGO_ENABLED=0 go test ./... -cover
+
+.template: &nonprod
+  tags:
+    - us-east-1
+    - nonprod
+  only:
+    - branches
+
+test nonprod mailbonobo:
+  <<: [*test, *nonprod]
